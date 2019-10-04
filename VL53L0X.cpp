@@ -4,7 +4,12 @@
 // VL53L0X datasheet.
 
 #include <VL53L0X.h>
+#ifdef __AVR_ATtiny85__
+#include "TinyWireM.h"
+#define Wire TinyWireM
+#else
 #include <Wire.h>
+#endif
 
 // Defines /////////////////////////////////////////////////////////////////////
 
